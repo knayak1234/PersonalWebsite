@@ -2,7 +2,11 @@
   "name": "personal-website",
   "private": true,
   "scripts": {
+    "dev": "NODE_ENV=development NODE_PATH=client/node_modules npx tsx server/index.ts",
     "build": "cd client && npm ci && npm run vercel-build",
     "vercel-build": "cd client && npm ci && npm run vercel-build"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.1"
   }
 }
