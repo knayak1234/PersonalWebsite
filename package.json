@@ -1,0 +1,7 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm ci && vite build"
+  }
+}

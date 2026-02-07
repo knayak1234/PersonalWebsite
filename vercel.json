@@ -1,5 +1,4 @@
 {
-  "rootDirectory": "client",
-  "buildCommand": "vite build",
-  "outputDirectory": "dist"
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist"
 }
