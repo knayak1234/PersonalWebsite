@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a professional academic portfolio website for Dr. Kishora Nayak, Assistant Professor of Physics at Panchayat College, Bargarh. The application showcases his research in experimental high-energy physics, particularly focusing on QCD Phase Diagram studies and Quark-Gluon Plasma research. The website features an interactive chatbot powered by OpenAI for answering questions about Dr. Nayak's research and academic work.
+This is a professional academic portfolio website for Dr. Kishora Nayak, Assistant Professor in Physics at Panchayat College, Bargarh. The application showcases his research in experimental high-energy physics, particularly focusing on QCD Phase Diagram studies and Quark-Gluon Plasma research. The website features an interactive chatbot powered by OpenAI for answering questions about Dr. Nayak's research and academic work.
 
 ## System Architecture
 

@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Award, Users, BookOpen } from "lucide-react";
 import logoImage from "@assets/Panchyat_Logo_1749470233751.jpg";
 import profileImage from "@assets/knayak_pict_1749469261620.jpg";
@@ -35,19 +34,12 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 lg:gap-12 items-center">
           <div className="lg:col-span-8 slide-in-left">
-            <div className="flex items-center space-x-2 mb-4">
-              <Badge variant="secondary" className="bg-white/30 text-white border-white/50 scale-hover pulse-glow backdrop-blur-sm font-semibold shadow-lg">
-                <Award className="w-4 h-4 mr-2" />
-                Experimental Physicist
-              </Badge>
-            </div>
-            
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-serif hero-gradient-text">
               Dr. Kishora Nayak
             </h1>
             
             <h2 className="text-xl lg:text-2xl font-light mb-6 text-white drop-shadow-lg slide-in-left stagger-1">
-              Assistant Professor of Physics
+              Assistant Professor in Physics
             </h2>
             
             <div className="flex items-center space-x-2 mb-6">

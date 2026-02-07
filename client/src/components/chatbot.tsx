@@ -78,7 +78,7 @@ export default function Chatbot() {
     // Basic identity question - keep short and direct
     if (lowerQuery.includes('who is') || lowerQuery.includes('who\'s') || 
         (lowerQuery.includes('kishora') && lowerQuery.includes('nayak') && lowerQuery.length < 30)) {
-      return "Dr. Kishora Nayak is an Assistant Professor of Physics at Panchayat College, Bargarh (Sambalpur University, Odisha). He specializes in experimental high-energy physics, particularly QCD Phase Diagram studies and Quark-Gluon Plasma research, with international experience at CERN and collaborations with STAR and ALICE experiments.";
+      return "Dr. Kishora Nayak is an Assistant Professor in Physics at Panchayat College, Bargarh (Sambalpur University, Odisha). He specializes in experimental high-energy physics, particularly QCD Phase Diagram studies and Quark-Gluon Plasma research, with international experience at CERN and collaborations with STAR and ALICE experiments.";
     }
 
     // Contact and collaboration responses

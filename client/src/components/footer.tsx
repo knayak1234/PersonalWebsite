@@ -41,7 +41,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Assistant Professor of Physics specializing in experimental high energy physics and nuclear physics research. 
+              Assistant Professor in Physics specializing in experimental high energy physics and nuclear physics research. 
               Committed to advancing scientific knowledge through international collaborations.
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function Footer() {
               © 2024 Dr. Kishora Nayak. All rights reserved.
             </p>
             <div className="flex items-center gap-4 mt-2 md:mt-0">
-              <p>Assistant Professor of Physics, Panchayat College | Last updated: January 2024</p>
+              <p>Assistant Professor in Physics, Panchayat College | Last updated: January 2024</p>
               <a href="/admin" className="text-gray-500 hover:text-gray-300 text-xs">Admin</a>
             </div>
           </div>
