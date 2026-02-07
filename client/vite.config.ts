@@ -25,6 +25,9 @@ export default defineConfig({
     },
   },
   root: import.meta.dirname,
+  css: {
+    postcss: path.resolve(import.meta.dirname, "postcss.config.js"),
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
