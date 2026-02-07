@@ -53,22 +53,22 @@ export default function Navigation() {
         : "bg-gradient-to-r from-white/90 via-blue-50/80 to-white/90 shadow-lg border-b border-blue-100/30"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-14">
           {/* Logo and Title */}
-          <div className="flex items-center space-x-4">
-            <div className="relative">
+          <div className="flex items-center gap-3">
+            <div className="relative shrink-0">
               <img 
                 src={logoImage} 
                 alt="Panchayat College Logo" 
-                className="h-12 w-12 object-contain rounded-full shadow-lg ring-2 ring-blue-200 hover:ring-blue-400 transition-all duration-300 hover:scale-110"
+                className="h-9 w-9 sm:h-10 sm:w-10 max-h-10 max-w-10 object-contain object-center rounded-full shadow-md ring-1 ring-blue-200/80 hover:ring-blue-400 transition-all duration-300 hover:scale-105"
               />
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-15 pointer-events-none"></div>
             </div>
-            <div className="flex flex-col">
-              <div className="font-bold text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient-x hover:scale-105 transition-transform duration-300">
+            <div className="flex flex-col min-w-0">
+              <div className="font-bold text-base sm:text-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent truncate">
                 Dr. Kishora Nayak
               </div>
-              <div className="text-sm font-medium bg-gradient-to-r from-gray-600 to-blue-500 bg-clip-text text-transparent">
+              <div className="text-xs sm:text-sm font-medium text-gray-600 truncate">
                 High Energy Physicist
               </div>
             </div>
