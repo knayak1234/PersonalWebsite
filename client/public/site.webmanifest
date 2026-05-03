@@ -1,0 +1,22 @@
+{
+  "name": "Dr. Kishora Nayak – Physicist, Odisha",
+  "short_name": "Dr. K. Nayak",
+  "description": "Official academic portfolio of Dr. Kishora Nayak, Assistant Professor of Physics at Panchayat College, Bargarh, Odisha.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/attached_assets/Panchyat_Logo_1749470233751.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/attached_assets/Panchyat_Logo_1749470233751.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

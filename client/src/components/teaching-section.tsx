@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Users, Settings, BookOpen, Award, Quote, Camera, Trophy, Star, Calendar } from "lucide-react";
+import { GraduationCap, Users, Settings, BookOpen, Award, Quote, Camera, Trophy, Star, Calendar, ExternalLink } from "lucide-react";
 
 export default function TeachingSection() {
   const courses = [
@@ -12,6 +12,23 @@ export default function TeachingSection() {
     { name: "Optics", level: "BSc", year: "2023-2024", semester: "Even", color: "bg-indigo-500" },
   ];
 
+  const addOnCourses = [
+    {
+      name: "Introduction to LaTeX for Report Writing",
+      code: "CS-AD-04-2024",
+      session: "2024-25",
+      color: "bg-teal-500",
+      icon: "📄",
+    },
+    {
+      name: "Foundations of Artificial Intelligence",
+      code: "AI-AD-04-2025",
+      session: "2025-26",
+      color: "bg-violet-500",
+      icon: "🤖",
+    },
+  ];
+
   const administrativeRoles = [
     {
       title: "Coordinator",
@@ -19,6 +36,7 @@ export default function TeachingSection() {
       institution: "Panchayat College",
       description: "Leading the self-financing computer science program, overseeing curriculum development and student affairs.",
       icon: Settings,
+      link: null,
     },
     {
       title: "IQAC Member",
@@ -26,6 +44,15 @@ export default function TeachingSection() {
       institution: "Panchayat College",
       description: "Contributing to institutional quality enhancement initiatives, accreditation processes, and academic excellence programs.",
       icon: Award,
+      link: null,
+    },
+    {
+      title: "Organising Secretary",
+      department: "National Conference on Frontiers in Physics & Technology (FPT-2026)",
+      institution: "Panchayat College, Bargarh",
+      description: "Organised and coordinated a national-level conference on cutting-edge topics in physics and technology.",
+      icon: Calendar,
+      link: "https://fpt-2026.vercel.app",
     },
   ];
 
@@ -82,6 +109,38 @@ export default function TeachingSection() {
               ))}
             </div>
             
+            {/* Add-On Courses */}
+            <div className="mb-8">
+              <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center font-serif">
+                <Star className="w-5 h-5 mr-2 text-yellow-500" />
+                Add-On Courses (Course Coordinator)
+              </h4>
+              <div className="grid gap-3">
+                {addOnCourses.map((course, index) => (
+                  <Card key={index} className="research-card hover:glow-border group border-l-4 border-l-teal-400">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-10 h-10 ${course.color} text-white rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-300`}>
+                            {course.icon}
+                          </div>
+                          <div>
+                            <h5 className="font-semibold text-foreground group-hover:text-primary transition-colors">{course.name}</h5>
+                            <div className="flex items-center space-x-2 mt-1">
+                              <Badge variant="outline" className="text-xs">Code: {course.code}</Badge>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0 ml-2">
+                          <Badge className="bg-teal-100 text-teal-800 text-xs">{course.session}</Badge>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             {/* Teaching Philosophy */}
             <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
               <CardHeader>
@@ -133,7 +192,18 @@ export default function TeachingSection() {
                         <p className="text-sm text-muted-foreground">{role.institution}</p>
                       </div>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{role.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-3">{role.description}</p>
+                    {role.link && (
+                      <a
+                        href={role.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-xs text-primary hover:text-primary/80 transition-colors font-medium"
+                      >
+                        <ExternalLink className="w-3 h-3 mr-1" />
+                        Conference Website
+                      </a>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -168,7 +238,7 @@ export default function TeachingSection() {
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 float">
                       <BookOpen className="w-5 h-5" />
                     </div>
-                    <div className="text-2xl font-bold stat-number mb-1">6+</div>
+                    <div className="text-2xl font-bold stat-number mb-1">8+</div>
                     <div className="text-xs text-muted-foreground">Courses Taught</div>
                   </CardContent>
                 </Card>

@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, GraduationCap, TrendingUp, Quote, Download, Eye, Star } from "lucide-react";
+import { BookOpen, Users, Award, ExternalLink, Globe, Presentation, Calendar, GraduationCap, TrendingUp, Quote, Star } from "lucide-react";
 
 export default function PublicationsSection() {
   const publicationStats = [
@@ -12,6 +12,18 @@ export default function PublicationsSection() {
   ];
 
   const selectedPublications = [
+    {
+      title: "System size dependence of charged hadrons directed flow at √s\u209NN = 200 GeV using a multi-phase transport model",
+      authors: "Kishora Nayak, Vipul Bairathi",
+      journal: "European Physical Journal C",
+      volume: "85",
+      pages: "1236",
+      year: "2025",
+      type: "First Author",
+      collaboration: "Theory",
+      color: "bg-purple-100 text-purple-800",
+      doi: "https://doi.org/10.1140/epjc/s10052-025-14966-5"
+    },
     {
       title: "Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow in heavy ion collisions",
       authors: "Kishora Nayak, Shusu Shi, Zi-Wei Lin",
@@ -71,6 +83,17 @@ export default function PublicationsSection() {
       collaboration: "ALICE",
       color: "bg-green-100 text-green-800",
       doi: "https://www.nature.com/articles/nphys4111"
+    },
+  ];
+
+  const organisedEvents = [
+    {
+      title: "National Conference on Frontiers in Physics & Technology (FPT-2026)",
+      role: "Organising Secretary",
+      institution: "Panchayat College, Bargarh",
+      year: "2026",
+      link: "https://fpt-2026.vercel.app",
+      description: "Organised and coordinated a national-level conference on cutting-edge topics in physics and technology."
     },
   ];
 
@@ -157,56 +180,48 @@ export default function PublicationsSection() {
         {/* Selected Publications */}
         <div className="mb-16 slide-in-left">
           <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif gradient-text">Selected Publications</h3>
-          <div className="space-y-6">
+          <div className="space-y-3">
             {selectedPublications.map((pub, index) => (
-              <Card key={index} className={`publication-card research-card reveal group cursor-pointer stagger-${index + 1}`}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
+              <Card key={index} className={`publication-card research-card group cursor-pointer stagger-${index + 1}`}>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center space-x-2">
-                      <Badge className={`${pub.color} text-xs px-2 py-1`}>{pub.type}</Badge>
-                      {pub.type === "First Author" && <Star className="w-4 h-4 text-yellow-500" />}
+                      <Badge className={`${pub.color} text-xs px-2 py-0.5`}>{pub.type}</Badge>
+                      {pub.type === "First Author" && <Star className="w-3.5 h-3.5 text-yellow-500" />}
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm text-muted-foreground">{pub.year}</span>
                       <Badge variant="outline" className="text-xs">{pub.collaboration}</Badge>
+                      <span className="text-xs text-muted-foreground">{pub.year}</span>
                     </div>
                   </div>
-                  
+
                   <a
                     href={pub.doi}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-lg font-semibold text-foreground mb-3 leading-relaxed hover:text-primary transition-colors cursor-pointer"
+                    className="block text-base font-semibold text-foreground mb-1 leading-snug hover:text-primary transition-colors"
                   >
                     "{pub.title}"
                   </a>
-                  
-                  <p className="text-muted-foreground mb-4">
+
+                  <p className="text-sm text-muted-foreground mb-1">
                     <span className="font-medium">{pub.authors}</span>
                   </p>
-                  
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-sm text-muted-foreground">
+
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs text-muted-foreground">
                       <span className="italic">{pub.journal}</span>{" "}
                       <span className="font-mono">{pub.volume}</span>, {pub.pages} ({pub.year})
                     </p>
-                  </div>
-
-                  <div className="reveal-content flex items-center justify-between pt-3 border-t border-gray-100">
-                    <div className="flex items-center space-x-4">
-                      <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-white transition-colors">
-                        <a href={pub.doi} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          DOI
-                        </a>
-                      </Button>
-                    </div>
-                    <Button variant="ghost" size="sm" asChild className="group-hover:bg-blue-50 transition-colors">
-                      <a href={pub.doi} target="_blank" rel="noopener noreferrer">
-                        <Eye className="w-4 h-4 mr-2" />
-                        View Paper
-                      </a>
-                    </Button>
+                    <a
+                      href={pub.doi}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-xs text-primary hover:text-primary/80 transition-colors font-medium ml-4 shrink-0"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-1" />
+                      DOI
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -216,7 +231,7 @@ export default function PublicationsSection() {
           <div className="text-center mt-8">
             <Button 
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => window.open('https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=a%20Kishorra.Nayak.1&ui-citation-summary=true', '_blank')}
+              onClick={() => window.open('https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=a%20Kishora.Nayak.1&ui-citation-summary=true', '_blank')}
             >
               <ExternalLink className="w-5 h-5 mr-2" />
               View Complete Publication List
@@ -335,6 +350,49 @@ export default function PublicationsSection() {
                       )}
                     </div>
                   )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Organised Events */}
+        <div className="mt-16 fade-in">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 font-serif gradient-text">Organised Events</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {organisedEvents.map((event, index) => (
+              <Card key={index} className="research-card hover:glow-border group">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <Users className="w-5 h-5 text-primary" />
+                      <a
+                        href={event.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-foreground hover:text-primary transition-colors"
+                      >
+                        {event.title}
+                      </a>
+                    </div>
+                    <Badge className="bg-indigo-100 text-indigo-800 text-xs shrink-0 ml-2">{event.year}</Badge>
+                  </div>
+                  <div className="flex items-center space-x-2 mb-3 text-sm text-muted-foreground">
+                    <Award className="w-4 h-4 text-yellow-500" />
+                    <span className="font-medium text-foreground">{event.role}</span>
+                    <span>·</span>
+                    <span>{event.institution}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{event.description}</p>
+                  <a
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-xs text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    <ExternalLink className="w-3 h-3 mr-1" />
+                    Conference Website
+                  </a>
                 </CardContent>
               </Card>
             ))}

@@ -68,6 +68,16 @@ export const collaborations = {
 };
 
 export const keyPublications = {
+  systemSizePaper2025: {
+    title: "System size dependence of charged hadrons directed flow at √sNN = 200 GeV using a multi-phase transport model",
+    authors: "Kishora Nayak, Vipul Bairathi",
+    journal: "European Physical Journal C",
+    citation: "Eur. Phys. J. C 85, 1236 (2025)",
+    doi: "https://doi.org/10.1140/epjc/s10052-025-14966-5",
+    year: 2025,
+    significance: "Comprehensive study of charged hadron directed flow v1 across different collision systems (O+O, Cu+Cu, Zr+Zr, Ru+Ru, Au+Au, U+U) at √sNN = 200 GeV using the AMPT-SM model",
+    impact: "Demonstrates system size independence of dv1/dη between Cu+Cu and Au+Au at low-pT, and reveals hard-soft asymmetry in particle production profiles"
+  },
   coalescencePaper2024: {
     title: "Coalescence sum rule and the electric charge- and strangeness-dependences of directed flow in heavy ion collisions",
     journal: "Physics Letters B",
@@ -112,6 +122,30 @@ export const teachingExpertise = {
       topics: ["Standard Model", "Experimental techniques", "Detector physics", "Data analysis methods"]
     }
   },
+  addOnCourses: [
+    {
+      name: "Introduction to LaTeX for Report Writing",
+      code: "CS-AD-04-2024",
+      session: "2024-25",
+      role: "Course Coordinator",
+      affiliation: "Assistant Professor, P.G. Department of Physics & Coordinator, Department of Computer Science"
+    },
+    {
+      name: "Foundations of Artificial Intelligence",
+      code: "AI-AD-04-2025",
+      session: "2025-26",
+      role: "Course Coordinator",
+      affiliation: "Assistant Professor, P.G. Department of Physics"
+    }
+  ],
+  organisedEvents: [
+    {
+      name: "National Conference on Frontiers in Physics & Technology (FPT-2026)",
+      role: "Organising Secretary",
+      institution: "Panchayat College, Bargarh",
+      website: "https://fpt-2026.vercel.app"
+    }
+  ],
   teachingPhilosophy: "Integrates cutting-edge research experience with fundamental physics education, bringing real-world examples from international collaborations into the classroom"
 };
 
