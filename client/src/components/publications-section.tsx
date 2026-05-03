@@ -13,7 +13,7 @@ export default function PublicationsSection() {
 
   const selectedPublications = [
     {
-      title: "System size dependence of charged hadrons directed flow at √s\u209NN = 200 GeV using a multi-phase transport model",
+      title: "System size dependence of charged hadrons directed flow at √sNN = 200 GeV using a multi-phase transport model",
       authors: "Kishora Nayak, Vipul Bairathi",
       journal: "European Physical Journal C",
       volume: "85",
