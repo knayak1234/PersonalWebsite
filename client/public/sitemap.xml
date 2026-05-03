@@ -6,7 +6,7 @@
 
   <!-- Homepage — highest priority -->
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/</loc>
+    <loc>https://www.kishoranayak.in/</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -14,35 +14,35 @@
 
   <!-- Section anchors — helps Google understand page structure -->
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/#about</loc>
+    <loc>https://www.kishoranayak.in/#about</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/#research</loc>
+    <loc>https://www.kishoranayak.in/#research</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/#publications</loc>
+    <loc>https://www.kishoranayak.in/#publications</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/#teaching</loc>
+    <loc>https://www.kishoranayak.in/#teaching</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://knayak-git-main-knayak1234-7346s-projects.vercel.app/#contact</loc>
+    <loc>https://www.kishoranayak.in/#contact</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

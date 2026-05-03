@@ -1,5 +1,5 @@
 # robots.txt — Dr. Kishora Nayak Academic Portfolio
-# https://knayak-git-main-knayak1234-7346s-projects.vercel.app
+# https://www.kishoranayak.in
 
 User-agent: *
 Allow: /
@@ -26,4 +26,4 @@ User-agent: Twitterbot
 Allow: /
 
 # Sitemap location
-Sitemap: https://knayak-git-main-knayak1234-7346s-projects.vercel.app/sitemap.xml
+Sitemap: https://www.kishoranayak.in/sitemap.xml
