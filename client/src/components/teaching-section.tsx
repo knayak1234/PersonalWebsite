@@ -1,11 +1,12 @@
+import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Users, Settings, BookOpen, Award, Quote, Camera, Trophy, Star, Calendar, ExternalLink } from "lucide-react";
+import { GraduationCap, Users, Settings, BookOpen, Award, Quote, Camera, Trophy, Star, Calendar, ExternalLink, FlaskConical } from "lucide-react";
 
 export default function TeachingSection() {
   const courses = [
     { name: "Statistical Mechanics", level: "BSc/MSc", year: "2023-24, 25", semester: "Even", color: "bg-purple-500" },
-    { name: "Computer Programming", level: "BSc/MSc", year: "2023-24, 25", semester: "Odd", color: "bg-orange-500" },
+    { name: "Computer Programming", level: "BSc/MSc", year: "2023-24, 25", semester: "Odd", color: "bg-orange-500", lab: "/teaching/computer-programming" },
     { name: "Particle Physics", level: "MSc", year: "2024-25", semester: "Even", color: "bg-blue-500" },
     { name: "Classical Mechanics", level: "BSc/MSc", year: "2023-2024", semester: "Even", color: "bg-green-500" },
     { name: "Modern Physics", level: "BSc", year: "2024", semester: "Even", color: "bg-red-500" },
@@ -82,31 +83,48 @@ export default function TeachingSection() {
             </h3>
             
             <div className="grid gap-4 mb-8">
-              {courses.map((course, index) => (
-                <Card key={index} className="research-card hover:glow-border group cursor-pointer">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-12 h-12 ${course.color} text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                          <BookOpen className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">{course.name}</h4>
-                          <div className="flex items-center space-x-2 mt-1">
-                            <Badge variant="outline" className="text-xs">{course.level}</Badge>
-                            <Badge variant="default" className="text-xs">
-                              {course.semester} Semester
-                            </Badge>
+              {courses.map((course, index) => {
+                const cardInner = (
+                  <Card className={`research-card hover:glow-border group cursor-pointer h-full ${course.lab ? "ring-1 ring-orange-200 hover:ring-orange-400" : ""}`}>
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className={`w-12 h-12 ${course.color} text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                            <BookOpen className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">{course.name}</h4>
+                            <div className="flex items-center flex-wrap gap-2 mt-1">
+                              <Badge variant="outline" className="text-xs">{course.level}</Badge>
+                              <Badge variant="default" className="text-xs">
+                                {course.semester} Semester
+                              </Badge>
+                              {course.lab && (
+                                <Badge className="text-xs bg-orange-100 text-orange-800 hover:bg-orange-200 inline-flex items-center gap-1">
+                                  <FlaskConical className="w-3 h-3" /> Interactive Lab
+                                </Badge>
+                              )}
+                            </div>
                           </div>
                         </div>
+                        <div className="text-right">
+                          <span className="text-sm text-muted-foreground">{course.year}</span>
+                          {course.lab && (
+                            <div className="text-xs font-semibold text-orange-600 mt-1 group-hover:underline">Open Lab →</div>
+                          )}
+                        </div>
                       </div>
-                      <div className="text-right">
-                        <span className="text-sm text-muted-foreground">{course.year}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                );
+                return course.lab ? (
+                  <Link key={index} href={course.lab} aria-label={`Open the ${course.name} interactive laboratory`}>
+                    {cardInner}
+                  </Link>
+                ) : (
+                  <div key={index}>{cardInner}</div>
+                );
+              })}
             </div>
             
             {/* Add-On Courses */}

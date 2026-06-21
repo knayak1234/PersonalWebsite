@@ -546,3 +546,33 @@ html {
     padding: 3rem 0;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   Computer Programming Laboratory — prose styling
+   ═══════════════════════════════════════════════ */
+.prose-lab {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+.prose-lab p { margin-bottom: 0.9rem; }
+.prose-lab ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 0.9rem; }
+.prose-lab ol { list-style: decimal; padding-left: 1.4rem; margin-bottom: 0.9rem; }
+.prose-lab li { margin-bottom: 0.35rem; }
+.prose-lab h3 { font-size: 1.05rem; font-weight: 700; margin: 1.2rem 0 0.5rem; }
+.prose-lab strong { color: var(--foreground); font-weight: 600; }
+.prose-lab a { color: hsl(221, 83%, 53%); text-decoration: underline; }
+.prose-lab code:not([class*="language-"]) {
+  background: var(--muted);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Hide scrollbars on the section navigator */
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* KaTeX should inherit color in dark contexts */
+.katex { color: inherit; }

@@ -9,12 +9,21 @@ import Homepage from "@/pages/homepage";
 import AdminPage from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 import Chatbot from "@/components/chatbot";
+import LabHome from "@/pages/lab/LabHome";
+import ComparisonDashboard from "@/pages/lab/ComparisonDashboard";
+import ExperimentPage from "@/pages/lab/ExperimentPage";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Homepage} />
       <Route path="/admin" component={AdminPage} />
+      {/* MSc Physics Computer Programming Laboratory.
+          Order matters in wouter: the static /comparison route must precede
+          the dynamic /:id route so it is matched first. */}
+      <Route path="/teaching/computer-programming" component={LabHome} />
+      <Route path="/teaching/computer-programming/comparison" component={ComparisonDashboard} />
+      <Route path="/teaching/computer-programming/:id" component={ExperimentPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -3,4 +3,8 @@ dist
 .DS_Store
 server/public
 vite.config.ts.*
-*.tar.gz.env
+*.tar.gz
+.env
+.env.*
+# Build artifact: generated from repo /attached_assets by scripts/copy-attached-assets.cjs
+client/public/attached_assets
