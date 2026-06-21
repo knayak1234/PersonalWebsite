@@ -2,6 +2,7 @@ import {
   Sigma, Dice5, Crosshair, Activity, TrendingUp, GitCompareArrows,
   Grid3x3, Spline, AreaChart, Target, Binary, Waves, FunctionSquare,
   ScatterChart, Calculator, LineChart,
+  Triangle, Split, Footprints, Ruler, Table2, Waypoints,
 } from "lucide-react";
 import type { ExperimentMeta, LabModule } from "./types";
 
@@ -28,7 +29,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "trapezoidal", moduleNumber: 1, module: "Numerical Integration",
     name: "Trapezoidal Rule", description: "Approximate a definite integral by summing trapezoidal strips under the curve.",
     difficulty: "Beginner", topic: "Definite integration, polynomial approximation",
-    applications: "Particle spectra, total multiplicity", icon: Sigma, accent: "from-blue-500 to-indigo-600", status: "complete",
+    applications: "Particle spectra, total multiplicity", icon: Triangle, accent: "from-blue-500 to-indigo-600", status: "complete",
   },
   {
     id: "simpson-13", moduleNumber: 1, module: "Numerical Integration",
@@ -60,7 +61,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "bisection", moduleNumber: 3, module: "Root Finding",
     name: "Bisection Method", description: "Bracket a root and halve the interval until the desired tolerance is met.",
     difficulty: "Beginner", topic: "Intermediate Value Theorem, bracketing",
-    applications: "Transcendental equations, freeze-out T", icon: Crosshair, accent: "from-rose-500 to-red-600", status: "complete",
+    applications: "Transcendental equations, freeze-out T", icon: Split, accent: "from-rose-500 to-red-600", status: "complete",
   },
   {
     id: "newton-raphson", moduleNumber: 3, module: "Root Finding",
@@ -79,7 +80,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "euler", moduleNumber: 4, module: "Differential Equations",
     name: "Euler Method", description: "The simplest explicit scheme for solving first-order ODEs y' = f(x,y).",
     difficulty: "Beginner", topic: "First-order ODE, finite steps",
-    applications: "Radioactive decay, simple kinetics", icon: Activity, accent: "from-emerald-500 to-teal-600", status: "complete",
+    applications: "Radioactive decay, simple kinetics", icon: Footprints, accent: "from-emerald-500 to-teal-600", status: "complete",
   },
   {
     id: "rk2", moduleNumber: 4, module: "Differential Equations",
@@ -98,7 +99,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "least-squares", moduleNumber: 5, module: "Curve Fitting",
     name: "Least Squares Fitting", description: "Fit the best straight line to data by minimising squared residuals.",
     difficulty: "Intermediate", topic: "Normal equations, regression, R²",
-    applications: "pT spectra fitting, exponential/Gaussian fits", icon: TrendingUp, accent: "from-amber-500 to-orange-600", status: "complete",
+    applications: "pT spectra fitting, exponential/Gaussian fits", icon: Ruler, accent: "from-amber-500 to-orange-600", status: "complete",
   },
   // Module 6
   {
@@ -112,7 +113,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "gauss-elimination", moduleNumber: 7, module: "Matrix Methods",
     name: "Gauss Elimination", description: "Solve a linear system by forward elimination and back substitution.",
     difficulty: "Intermediate", topic: "Linear systems, pivoting",
-    applications: "Detector calibration, coupled equations", icon: Grid3x3, accent: "from-violet-500 to-indigo-600", status: "complete",
+    applications: "Detector calibration, coupled equations", icon: Table2, accent: "from-violet-500 to-indigo-600", status: "complete",
   },
   {
     id: "gauss-seidel", moduleNumber: 7, module: "Matrix Methods",
@@ -131,7 +132,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "lagrange", moduleNumber: 8, module: "Interpolation",
     name: "Lagrange Interpolation", description: "Construct an interpolating polynomial for arbitrarily spaced data points.",
     difficulty: "Intermediate", topic: "Lagrange basis polynomials",
-    applications: "Unequal-spacing interpolation", icon: Spline, accent: "from-rose-500 to-pink-600", status: "soon",
+    applications: "Unequal-spacing interpolation", icon: Waypoints, accent: "from-rose-500 to-pink-600", status: "soon",
   },
 ];
 
