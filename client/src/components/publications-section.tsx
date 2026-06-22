@@ -97,7 +97,16 @@ export default function PublicationsSection() {
     },
   ];
 
-  const recentConferences = [
+  const recentConferences: {
+    title: string;
+    location: string;
+    year: string;
+    talk: string;
+    type: string;
+    date?: string;
+    link?: string;
+    publication?: string;
+  }[] = [
     {
       title: "10th Asian Triangle Heavy-Ion Conference (ATHIC 2025)",
       location: "IISER, Berhampur, India",

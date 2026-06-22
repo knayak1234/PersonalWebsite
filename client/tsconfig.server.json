@@ -1,0 +1,21 @@
+{
+  "//": "Type-checks server/ and shared/ from client/, where all runtime deps live. Mirrors how the dev script runs tsx with NODE_PATH=client/node_modules. Run via: npm run check:server",
+  "include": ["../server/**/*", "../shared/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "lib": ["esnext"],
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@shared/*": ["../shared/*"],
+      "*": ["./node_modules/@types/*", "./node_modules/*"]
+    }
+  }
+}

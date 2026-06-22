@@ -17,9 +17,15 @@ import buildBisection from "@/components/lab/experiments/bisection";
 import buildNewtonRaphson from "@/components/lab/experiments/newtonRaphson";
 import buildSecant from "@/components/lab/experiments/secant";
 import buildEuler from "@/components/lab/experiments/euler";
+import buildRk2 from "@/components/lab/experiments/rk2";
 import buildRk4 from "@/components/lab/experiments/rk4";
 import buildLeastSquares from "@/components/lab/experiments/leastSquares";
 import buildGaussElimination from "@/components/lab/experiments/gaussElimination";
+import buildLcg from "@/components/lab/experiments/lcg";
+import buildDifferentiation from "@/components/lab/experiments/differentiation";
+import buildGaussSeidel from "@/components/lab/experiments/gaussSeidel";
+import buildNewtonForward from "@/components/lab/experiments/newtonForward";
+import buildLagrange from "@/components/lab/experiments/lagrange";
 
 type Builder = (meta: ExperimentMeta, prev?: ExperimentMeta, next?: ExperimentMeta) => ExperimentContent;
 
@@ -32,9 +38,15 @@ const BUILDERS: Record<string, Builder> = {
   "newton-raphson": buildNewtonRaphson,
   secant: buildSecant,
   euler: buildEuler,
+  rk2: buildRk2,
   rk4: buildRk4,
   "least-squares": buildLeastSquares,
   "gauss-elimination": buildGaussElimination,
+  lcg: buildLcg,
+  differentiation: buildDifferentiation,
+  "gauss-seidel": buildGaussSeidel,
+  "newton-forward": buildNewtonForward,
+  lagrange: buildLagrange,
 };
 
 function ComingSoon({ meta }: { meta: ExperimentMeta }) {

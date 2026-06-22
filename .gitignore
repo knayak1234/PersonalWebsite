@@ -8,3 +8,6 @@ vite.config.ts.*
 .env.*
 # Build artifact: generated from repo /attached_assets by scripts/copy-attached-assets.cjs
 client/public/attached_assets
+
+# Local Claude tooling
+.claude/

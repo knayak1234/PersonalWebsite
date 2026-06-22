@@ -48,7 +48,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "lcg", moduleNumber: 2, module: "Random Numbers",
     name: "Linear Congruential Generator", description: "Generate pseudo-random sequences and study their period and uniformity.",
     difficulty: "Beginner", topic: "Modular arithmetic, pseudo-randomness",
-    applications: "Monte Carlo event generation", icon: Binary, accent: "from-fuchsia-500 to-purple-600", status: "soon",
+    applications: "Monte Carlo event generation", icon: Binary, accent: "from-fuchsia-500 to-purple-600", status: "complete",
   },
   {
     id: "monte-carlo-pi", moduleNumber: 2, module: "Random Numbers",
@@ -86,7 +86,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "rk2", moduleNumber: 4, module: "Differential Equations",
     name: "Runge–Kutta (RK2)", description: "Second-order Runge–Kutta improving on Euler using a midpoint/trapezoidal estimate.",
     difficulty: "Intermediate", topic: "Predictor–corrector, second-order accuracy",
-    applications: "Transport equations, decay chains", icon: Waves, accent: "from-teal-500 to-emerald-600", status: "soon",
+    applications: "Transport equations, decay chains", icon: Waves, accent: "from-teal-500 to-emerald-600", status: "complete",
   },
   {
     id: "rk4", moduleNumber: 4, module: "Differential Equations",
@@ -106,7 +106,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "differentiation", moduleNumber: 6, module: "Numerical Differentiation",
     name: "Numerical Differentiation", description: "Compare forward, backward and central difference formulas and their errors.",
     difficulty: "Intermediate", topic: "Finite differences, truncation error",
-    applications: "Velocity/acceleration from data", icon: GitCompareArrows, accent: "from-cyan-500 to-sky-600", status: "soon",
+    applications: "Velocity/acceleration from data", icon: GitCompareArrows, accent: "from-cyan-500 to-sky-600", status: "complete",
   },
   // Module 7
   {
@@ -119,20 +119,20 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "gauss-seidel", moduleNumber: 7, module: "Matrix Methods",
     name: "Gauss–Seidel Method", description: "Iteratively solve a linear system and watch the error decay to zero.",
     difficulty: "Advanced", topic: "Iterative solvers, diagonal dominance",
-    applications: "Large sparse systems, relaxation", icon: Calculator, accent: "from-indigo-500 to-violet-600", status: "soon",
+    applications: "Large sparse systems, relaxation", icon: Calculator, accent: "from-indigo-500 to-violet-600", status: "complete",
   },
   // Module 8
   {
     id: "newton-forward", moduleNumber: 8, module: "Interpolation",
     name: "Newton Forward Interpolation", description: "Build a forward-difference table and interpolate on equally spaced data.",
     difficulty: "Intermediate", topic: "Finite differences, interpolation polynomial",
-    applications: "Tabulated data interpolation", icon: ScatterChart, accent: "from-pink-500 to-rose-600", status: "soon",
+    applications: "Tabulated data interpolation", icon: ScatterChart, accent: "from-pink-500 to-rose-600", status: "complete",
   },
   {
     id: "lagrange", moduleNumber: 8, module: "Interpolation",
     name: "Lagrange Interpolation", description: "Construct an interpolating polynomial for arbitrarily spaced data points.",
     difficulty: "Intermediate", topic: "Lagrange basis polynomials",
-    applications: "Unequal-spacing interpolation", icon: Waypoints, accent: "from-rose-500 to-pink-600", status: "soon",
+    applications: "Unequal-spacing interpolation", icon: Waypoints, accent: "from-rose-500 to-pink-600", status: "complete",
   },
 ];
 
