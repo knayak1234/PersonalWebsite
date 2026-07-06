@@ -8,6 +8,7 @@ export default function TeachingSection() {
     { name: "Statistical Mechanics", level: "BSc/MSc", year: "2023-24, 25", semester: "Even", color: "bg-purple-500" },
     { name: "Computer Programming", level: "BSc/MSc", year: "2023-24, 25", semester: "Odd", color: "bg-orange-500", lab: "/teaching/computer-programming" },
     { name: "Particle Physics", level: "MSc", year: "2024-25", semester: "Even", color: "bg-blue-500" },
+    { name: "Research Methodology", level: "MSc", year: "2025-26", semester: "Odd", color: "bg-cyan-500" },
     { name: "Classical Mechanics", level: "BSc/MSc", year: "2023-2024", semester: "Even", color: "bg-green-500" },
     { name: "Modern Physics", level: "BSc", year: "2024", semester: "Even", color: "bg-red-500" },
     { name: "Optics", level: "BSc", year: "2023-2024", semester: "Even", color: "bg-indigo-500" },
