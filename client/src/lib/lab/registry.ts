@@ -4,6 +4,7 @@ import {
   ScatterChart, Calculator, LineChart,
   Triangle, Split, Footprints, Ruler, Table2, Waypoints,
   ArrowUpDown, Superscript, Minus, Grid2x2, FlipHorizontal2, Layers, Atom,
+  BarChart3, Infinity as InfinityIcon, Rows3, Network, Gauge, Mountain,
 } from "lucide-react";
 import type { ExperimentMeta, LabModule } from "./types";
 
@@ -60,7 +61,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "sorting", moduleNumber: 2, module: "Sorting",
     name: "Sorting a Set of Numbers", description: "Arrange numbers in ascending or descending order with a step-by-step selection-sort trace.",
     difficulty: "Beginner", topic: "Comparison sorting, selection sort",
-    applications: "Ranking data, median, histogram binning", icon: ArrowUpDown, accent: "from-sky-500 to-blue-600", status: "complete",
+    applications: "Ranking data, median, histogram binning", icon: BarChart3, accent: "from-sky-500 to-blue-600", status: "complete",
   },
 
   // ── Module 3 · Series Summation ────────────────────────────────
@@ -68,7 +69,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "series-summation", moduleNumber: 3, module: "Series Summation",
     name: "Series Summation (Sin, Cos, eˣ, Log)", description: "Evaluate elementary functions by summing their Maclaurin series term by term.",
     difficulty: "Beginner", topic: "Taylor/Maclaurin series, convergence",
-    applications: "Function evaluation, oscillations, decay", icon: Sigma, accent: "from-fuchsia-500 to-purple-600", status: "complete",
+    applications: "Function evaluation, oscillations, decay", icon: InfinityIcon, accent: "from-fuchsia-500 to-purple-600", status: "complete",
   },
 
   // ── Module 4 · Interpolation ───────────────────────────────────
@@ -82,7 +83,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "quadratic-interpolation", moduleNumber: 4, module: "Interpolation",
     name: "Quadratic Interpolation", description: "Fit a parabola through three points to interpolate with curvature.",
     difficulty: "Intermediate", topic: "Three-point Lagrange parabola",
-    applications: "Peak finding, smooth table lookup", icon: Spline, accent: "from-pink-500 to-fuchsia-600", status: "complete",
+    applications: "Peak finding, smooth table lookup", icon: Activity, accent: "from-pink-500 to-fuchsia-600", status: "complete",
   },
   {
     id: "newton-forward", moduleNumber: 4, module: "Interpolation",
@@ -106,7 +107,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "lagrange", moduleNumber: 4, module: "Interpolation",
     name: "Lagrange Interpolation", description: "Construct an interpolating polynomial for arbitrarily spaced data points.",
     difficulty: "Intermediate", topic: "Lagrange basis polynomials",
-    applications: "Unequal-spacing interpolation", icon: Waypoints, accent: "from-rose-500 to-pink-600", status: "complete",
+    applications: "Unequal-spacing interpolation", icon: Network, accent: "from-rose-500 to-pink-600", status: "complete",
   },
 
   // ── Module 5 · Matrix Operations ───────────────────────────────
@@ -134,7 +135,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "gauss-elimination", moduleNumber: 6, module: "Linear Systems",
     name: "Gauss Elimination", description: "Solve a linear system by forward elimination and back substitution.",
     difficulty: "Intermediate", topic: "Linear systems, pivoting",
-    applications: "Detector calibration, coupled equations", icon: Table2, accent: "from-indigo-500 to-blue-600", status: "complete",
+    applications: "Detector calibration, coupled equations", icon: Rows3, accent: "from-indigo-500 to-blue-600", status: "complete",
   },
   {
     id: "lu-decomposition", moduleNumber: 6, module: "Linear Systems",
@@ -174,7 +175,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "simpson-38", moduleNumber: 8, module: "Additional Experiments",
     name: "Simpson's 3/8 Rule", description: "A cubic Newton–Cotes rule integrating three intervals at a time.",
     difficulty: "Intermediate", topic: "Cubic interpolation, Newton–Cotes",
-    applications: "Spectra integration over odd grids", icon: AreaChart, accent: "from-teal-500 to-emerald-600", status: "complete",
+    applications: "Spectra integration over odd grids", icon: Mountain, accent: "from-teal-500 to-emerald-600", status: "complete",
   },
   {
     id: "lcg", moduleNumber: 8, module: "Additional Experiments",
@@ -204,7 +205,7 @@ export const EXPERIMENTS: ExperimentMeta[] = [
     id: "rk4", moduleNumber: 8, module: "Additional Experiments",
     name: "Runge–Kutta (RK4)", description: "The workhorse fourth-order method balancing accuracy and cost.",
     difficulty: "Advanced", topic: "Fourth-order accuracy, weighted slopes",
-    applications: "Hydrodynamic evolution, orbital mechanics", icon: Waves, accent: "from-green-600 to-teal-600", status: "complete",
+    applications: "Hydrodynamic evolution, orbital mechanics", icon: Gauge, accent: "from-green-600 to-teal-600", status: "complete",
   },
   {
     id: "differentiation", moduleNumber: 8, module: "Additional Experiments",
