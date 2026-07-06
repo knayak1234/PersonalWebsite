@@ -93,7 +93,7 @@ WHILE x < xend DO
     x  ← x + h
     PRINT x, y
 END WHILE`,
-      flowchart: ["Start", "Read f, x0, y0, h, xend", "k1 = f(x,y)", "k2 = f(x+h, y+h·k1)", "y = y + (h/2)(k1+k2)", "x = x + h", "x < xend ?", "Output (x, y)", "Stop"],
+      flowchart: ["Start", "Read f, x_0, y_0, h, x_{end}", "k_1 = f(x,y)", "k_2 = f(x+h, y+h·k_1)", "y = y + (h/2)(k_1+k_2)", "x = x + h", "x < x_{end} ?", "Output (x, y)", "Stop"],
     },
     simulator: <ODESimShared method="rk2" />,
     cFilename: "rk2.c",

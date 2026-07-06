@@ -201,7 +201,7 @@ FOR each segment i:
     d ← (M[i+1]-M[i])/(3 h[i])
     b ← (y[i+1]-y[i])/h[i] - h[i](2M[i]+M[i+1])/3
 EVALUATE: find interval, S(x)=a+b t+c t²+d t³, t=x-x[i]`,
-      flowchart: ["Start", "Sort data, compute h", "Build tridiagonal system", "Natural BCs M₀=Mₙ=0", "Solve for M", "Coeffs a,b,c,d", "Evaluate S(x)", "Stop"],
+      flowchart: ["Start", "Sort data, compute h", "Build tridiagonal system", "Natural BCs M_0=M_n=0", "Solve for M", "Coeffs a,b,c,d", "Evaluate S(x)", "Stop"],
     },
     simulator: <CubicSplineSim />,
     cFilename: "cubic_spline.c",

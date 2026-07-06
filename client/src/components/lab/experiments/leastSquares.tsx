@@ -236,7 +236,7 @@ a ← (Sy − b*Sx) / n
 FOR i = 1 TO n DO  res[i] ← y[i] − (a + b*x[i])
 R2 ← 1 − Σ(res²) / Σ((y − ȳ)²)
 OUTPUT a, b, R2`,
-      flowchart: ["Start", "Read data (xᵢ, yᵢ)", "Compute Σx, Σy, Σx², Σxy", "b = (nΣxy−ΣxΣy)/(nΣx²−(Σx)²)", "a = ȳ − b·x̄", "Compute residuals & R²", "Output a, b, R²", "Stop"],
+      flowchart: ["Start", "Read data (x_i, y_i)", "Compute Σx, Σy, Σx^2, Σxy", "b = (nΣxy−ΣxΣy)/(nΣx^2−(Σx)^2)", "a = ȳ − b·x̄", "Compute residuals & R^2", "Output a, b, R^2", "Stop"],
     },
     simulator: <LeastSquaresSim />,
     cFilename: "least_squares.c",

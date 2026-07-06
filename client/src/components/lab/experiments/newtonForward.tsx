@@ -226,7 +226,7 @@ FOR k = 1 TO n DO
     term ← term * (p - (k-1)) / k
     value ← value + term * d[k][0]
 OUTPUT value`,
-      flowchart: ["Start", "Read table, xp", "Build Δ-table", "p = (xp − x0)/h", "Sum Newton forward series", "Output y(xp)", "Stop"],
+      flowchart: ["Start", "Read table, xp", "Build Δ-table", "p = (x_p − x_0)/h", "Sum Newton forward series", "Output y(xp)", "Stop"],
     },
     simulator: <NewtonForwardSim />,
     cFilename: "newton_forward.c",

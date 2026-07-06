@@ -205,7 +205,7 @@ FOR i ← 1 TO n−1 DO
 END FOR
 I ← (h / 2) × sum
 OUTPUT I`,
-      flowchart: ["Start", "Read f, a, b, n", "h = (b−a)/n", "sum = f(a)+f(b)", "Loop i=1..n−1: sum += 2f(xᵢ)", "I = (h/2)·sum", "Output I", "Stop"],
+      flowchart: ["Start", "Read f, a, b, n", "h = (b−a)/n", "sum = f(a)+f(b)", "Loop i=1..n−1: sum += 2f(x_i)", "I = (h/2)·sum", "Output I", "Stop"],
     },
     simulator: <TrapezoidalSim />,
     cFilename: "trapezoidal.c",

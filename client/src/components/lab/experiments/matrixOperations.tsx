@@ -209,7 +209,7 @@ FOR i = 0 TO m-1
     FOR k = 0 TO p-1
       C[i][j] ← C[i][j] + A[i][k]*B[k][j]
 OUTPUT AT, C`,
-      flowchart: ["Start", "Read A, B", "Transpose A", "Dimensions match?", "Triple loop C=ΣA·B", "Output Aᵀ and C", "Stop"],
+      flowchart: ["Start", "Read A, B", "Transpose A", "Dimensions match?", "Triple loop C=ΣA·B", "Output A^{T} and C", "Stop"],
     },
     simulator: <MatrixOpsSim />,
     cFilename: "matrix_ops.c",

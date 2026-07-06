@@ -87,7 +87,7 @@ WHILE x < xend DO
     x ← x + h
     PRINT x, y
 END WHILE`,
-      flowchart: ["Start", "Read f, x0, y0, h, xend", "y = y + h·f(x,y)", "x = x + h", "x < xend ?", "Output (x, y)", "Stop"],
+      flowchart: ["Start", "Read f, x_0, y_0, h, x_{end}", "y = y + h·f(x,y)", "x = x + h", "x < x_{end} ?", "Output (x, y)", "Stop"],
     },
     simulator: <ODESimShared method="euler" />,
     cFilename: "euler.c",

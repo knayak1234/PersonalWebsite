@@ -84,7 +84,7 @@ FOR i ← 1 TO n−1 DO
 END FOR
 I ← (h / 3) × sum
 OUTPUT I`,
-      flowchart: ["Start", "Read f, a, b, n (even)", "h = (b−a)/n", "sum = f(a)+f(b)", "Odd i: +4f(xᵢ) · Even i: +2f(xᵢ)", "I = (h/3)·sum", "Output I", "Stop"],
+      flowchart: ["Start", "Read f, a, b, n (even)", "h = (b−a)/n", "sum = f(a)+f(b)", "Odd i: +4f(x_i) · Even i: +2f(x_i)", "I = (h/3)·sum", "Output I", "Stop"],
     },
     simulator: <IntegrationSimShared rule="s13" />,
     cFilename: "simpson13.c",

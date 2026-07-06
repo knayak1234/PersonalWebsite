@@ -258,7 +258,7 @@ int main(void) {
       { level: "Medium", text: "Sum log(1+x) at x = 0.5 to 10⁻⁶ accuracy and report the term count.", hint: "Alternating, |x|<1." },
       { level: "Medium", text: "Show numerically that summing sin(10) directly needs many terms; then reduce the argument mod 2π.", hint: "10 − 2π·1 ≈ 3.717." },
       { level: "Advanced", text: "Compare the truncation error bound (first neglected term) with the actual error for cos(1).", hint: "Alternating series estimate." },
-      { level: "Advanced", text: "Demonstrate cancellation by computing e^(−20) via its series vs 1/e^20.", hint: "The direct series loses precision." },
+      { level: "Advanced", text: "Demonstrate cancellation by computing e^(−20) via its series vs 1/e^{20}.", hint: "The direct series loses precision." },
       { level: "Advanced", text: "Implement adaptive stopping when |term/sum| < 10⁻⁸.", hint: "Relative-tolerance test." },
     ],
     references: (

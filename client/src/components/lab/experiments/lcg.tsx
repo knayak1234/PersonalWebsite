@@ -223,7 +223,7 @@ FOR n = 1 TO count DO
     OUTPUT X, u
 END FOR
 /* period = distance between first repeated states */`,
-      flowchart: ["Start", "Read a, c, m, X0, count", "X = (a·X + c) mod m", "u = X / m", "Output X, u", "n < count ?", "Report period", "Stop"],
+      flowchart: ["Start", "Read a, c, m, X_0, count", "X = (a·X + c) mod m", "u = X / m", "Output X, u", "n < count ?", "Report period", "Stop"],
     },
     simulator: <LcgSim />,
     cFilename: "lcg.c",

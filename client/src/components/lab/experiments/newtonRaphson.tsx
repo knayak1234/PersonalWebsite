@@ -213,7 +213,7 @@ FOR k = 1 TO maxIter DO
     x ← xnew
 END FOR
 OUTPUT x`,
-      flowchart: ["Start", "Read f, f', x0, tol", "xnew = x − f(x)/f'(x)", "|xnew − x| < tol ?", "x = xnew", "Output root xnew", "Stop"],
+      flowchart: ["Start", "Read f, f', x_0, tol", "x_{new} = x − f(x)/f'(x)", "|x_{new} − x| < tol ?", "x = x_{new}", "Output root x_{new}", "Stop"],
     },
     simulator: <NewtonSim />,
     cFilename: "newton_raphson.c",

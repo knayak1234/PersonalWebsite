@@ -198,7 +198,7 @@ FOR k = 0 TO n-1 DO
     FOR i ≠ k DO
         M[i][*] ← M[i][*] - M[i][k]*M[k][*]
 OUTPUT right half of M = A^{-1}`,
-      flowchart: ["Start", "Form [A | I]", "Pick & normalise pivot", "Clear column above & below", "Singular? → stop", "Left = I ?", "Output A⁻¹", "Stop"],
+      flowchart: ["Start", "Form [A | I]", "Pick & normalise pivot", "Clear column above & below", "Singular? → stop", "Left = I ?", "Output A^{-1}", "Stop"],
     },
     simulator: <InverseSim />,
     cFilename: "matrix_inverse.c",

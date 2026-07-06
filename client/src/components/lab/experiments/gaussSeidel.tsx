@@ -242,7 +242,7 @@ FOR k = 1 TO maxIter DO
         x[i] ← xnew          // use immediately
     IF err < tol THEN STOP
 OUTPUT x`,
-      flowchart: ["Start", "Read A, b, tol", "Guess x = 0", "Update each xᵢ (latest values)", "max |Δx| < tol ?", "Output x", "Stop"],
+      flowchart: ["Start", "Read A, b, tol", "Guess x = 0", "Update each x_i (latest values)", "max |Δx| < tol ?", "Output x", "Stop"],
     },
     simulator: <GaussSeidelSim />,
     cFilename: "gauss_seidel.c",

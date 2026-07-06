@@ -167,7 +167,7 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
 m ← (y1 - y0) / (x1 - x0)
 y ← y0 + m * (x - x0)
 OUTPUT y`,
-      flowchart: ["Start", "Read points and x", "m = (y1−y0)/(x1−x0)", "y = y0 + m(x−x0)", "Output y", "Stop"],
+      flowchart: ["Start", "Read points and x", "m = (y_1−y_0)/(x_1−x_0)", "y = y_0 + m(x−x_0)", "Output y", "Stop"],
     },
     simulator: <LinearSim />,
     cFilename: "linear_interp.c",

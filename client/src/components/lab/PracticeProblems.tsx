@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Lightbulb } from "lucide-react";
 import type { Problem } from "@/lib/lab/types";
+import { Sci } from "./Pseudocode";
 
 const levelStyle: Record<Problem["level"], string> = {
   Easy: "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300",
@@ -17,7 +18,7 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
         <span className="text-xs font-semibold text-muted-foreground">Problem {index + 1}</span>
         <Badge className={`text-xs ${levelStyle[problem.level]}`}>{problem.level}</Badge>
       </div>
-      <p className="text-sm leading-relaxed">{problem.text}</p>
+      <p className="text-sm leading-relaxed"><Sci>{problem.text}</Sci></p>
       {problem.hint && (
         <div className="mt-3">
           <button
@@ -28,7 +29,7 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
             {showHint ? "Hide hint" : "Show hint"}
           </button>
           {showHint && (
-            <p className="mt-2 text-xs text-muted-foreground bg-muted/50 rounded p-2">{problem.hint}</p>
+            <p className="mt-2 text-xs text-muted-foreground bg-muted/50 rounded p-2"><Sci>{problem.hint}</Sci></p>
           )}
         </div>
       )}

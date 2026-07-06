@@ -191,7 +191,7 @@ ELSE
     re ← -b / (2a);  im ← sqrt(-D) / (2a)
     x1 ← re + i*im;  x2 ← re - i*im
 OUTPUT roots and nature`,
-      flowchart: ["Start", "Read a, b, c", "a = 0 ?", "D = b²−4ac", "Sign of D ?", "Compute roots", "Output roots & nature", "Stop"],
+      flowchart: ["Start", "Read a, b, c", "a = 0 ?", "D = b^2−4ac", "Sign of D ?", "Compute roots", "Output roots & nature", "Stop"],
     },
     simulator: <QuadraticSim />,
     cFilename: "quadratic.c",

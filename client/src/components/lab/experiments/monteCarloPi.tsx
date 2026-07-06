@@ -163,7 +163,7 @@ FOR i ← 1 TO N DO
 END FOR
 pi ← 4 × count / N
 OUTPUT pi`,
-      flowchart: ["Start", "Read N, count = 0", "Sample (x,y) in [0,1)²", "x²+y² ≤ 1 ? count++", "Repeat N times", "π = 4·count/N", "Output π", "Stop"],
+      flowchart: ["Start", "Read N, count = 0", "Sample (x,y) in [0,1)^2", "x^2+y^2 ≤ 1 ? count++", "Repeat N times", "π = 4·count/N", "Output π", "Stop"],
     },
     simulator: <MonteCarloPiSim />,
     cFilename: "monte_carlo_pi.c",
@@ -209,7 +209,7 @@ int main(void) {
       { q: "What is the law of large numbers' role here?", a: "It guarantees the sample average converges to the true expected value (π/4) as N → ∞." },
       { q: "Give the general Monte Carlo integration formula.", a: "∫ g dx over a domain of volume V ≈ (V/N) Σ g(xᵢ) for uniform samples xᵢ." },
       { q: "Name a physics code that relies on Monte Carlo.", a: "GEANT (detector simulation), PYTHIA/HIJING/AMPT (event generators), or Metropolis Monte Carlo for the Ising model." },
-      { q: "How can you estimate the uncertainty of your π estimate?", a: "From the binomial standard error: σ ≈ 4√(p(1−p)/N) with p = N_in/N, or by repeating runs and taking the spread." },
+      { q: "How can you estimate the uncertainty of your π estimate?", a: "From the binomial standard error: σ ≈ 4√(p(1−p)/N) with p = N_{in}/N, or by repeating runs and taking the spread." },
     ],
     problems: [
       { level: "Easy", text: "Estimate π with N = 100, 1000 and 10000 points and tabulate the error. Does it shrink like 1/√N?", hint: "Compare error ratios with √10 ≈ 3.16." },
@@ -220,7 +220,7 @@ int main(void) {
       { level: "Medium", text: "Implement antithetic variates (use x and 1−x) and show the variance drops.", hint: "Pair each sample with its mirror." },
       { level: "Medium", text: "Estimate the volume of a unit sphere in 3-D by sampling a cube.", hint: "Fraction inside × 8 = (4/3)π." },
       { level: "Advanced", text: "Use importance sampling to integrate ∫₀^∞ e^{−x} x² dx and compare variance with naive sampling.", hint: "Sample from the exponential distribution." },
-      { level: "Advanced", text: "Write a Metropolis sampler for a 1-D Gaussian and verify the sampled mean and variance.", hint: "Accept moves with probability min(1, p_new/p_old)." },
+      { level: "Advanced", text: "Write a Metropolis sampler for a 1-D Gaussian and verify the sampled mean and variance.", hint: "Accept moves with probability min(1, p_{new}/p_{old})." },
       { level: "Advanced", text: "Estimate a 5-dimensional integral by Monte Carlo and argue why grid methods are infeasible.", hint: "Grid cost ∝ m⁵ points." },
     ],
     references: (

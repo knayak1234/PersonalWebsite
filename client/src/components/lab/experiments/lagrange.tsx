@@ -198,7 +198,7 @@ FOR i = 0 TO n-1 DO
         L ← L * (xp - x[j]) / (x[i] - x[j])
     value ← value + L * y[i]
 OUTPUT value`,
-      flowchart: ["Start", "Read points, xp", "For each i: build Lᵢ(xp)", "Accumulate Lᵢ·yᵢ", "P(xp) = Σ", "Output P(xp)", "Stop"],
+      flowchart: ["Start", "Read points, x_p", "For each i: build L_i(x_p)", "Accumulate L_i·y_i", "P(x_p) = Σ", "Output P(xp)", "Stop"],
     },
     simulator: <LagrangeSim />,
     cFilename: "lagrange.c",

@@ -189,7 +189,7 @@ L1 ← (x-x0)(x-x2)/((x1-x0)(x1-x2))
 L2 ← (x-x0)(x-x1)/((x2-x0)(x2-x1))
 P  ← L0*y0 + L1*y1 + L2*y2
 OUTPUT P`,
-      flowchart: ["Start", "Read 3 points, x", "Build L0, L1, L2", "P = ΣLᵢyᵢ", "Output P", "Stop"],
+      flowchart: ["Start", "Read 3 points, x", "Build L_0, L_1, L_2", "P = ΣL_i y_i", "Output P", "Stop"],
     },
     simulator: <QuadraticInterpSim />,
     cFilename: "quadratic_interp.c",

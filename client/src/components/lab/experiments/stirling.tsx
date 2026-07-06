@@ -217,7 +217,7 @@ value += p*p/2 * Δ2[mid-1]
 value += p*(p*p-1)/6 * (Δ3[mid-2]+Δ3[mid-1])/2
 value += p*p*(p*p-1)/24 * Δ4[mid-2]
 OUTPUT value`,
-      flowchart: ["Start", "Read equally spaced data", "Pick central x₀", "Build Δ table", "p = (x−x₀)/h", "Apply Stirling formula", "Output value", "Stop"],
+      flowchart: ["Start", "Read equally spaced data", "Pick central x_0", "Build Δ table", "p = (x−x_0)/h", "Apply Stirling formula", "Output value", "Stop"],
     },
     simulator: <StirlingSim />,
     cFilename: "stirling.c",

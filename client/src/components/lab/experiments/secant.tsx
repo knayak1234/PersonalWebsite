@@ -217,7 +217,7 @@ FOR k = 1 TO maxIter DO
     x0 ← x1;  x1 ← x2
 END FOR
 OUTPUT x1`,
-      flowchart: ["Start", "Read f, x0, x1, tol", "x2 = x1 − f1(x1−x0)/(f1−f0)", "|x2 − x1| < tol ?", "x0=x1; x1=x2", "Output root x2", "Stop"],
+      flowchart: ["Start", "Read f, x_0, x_1, tol", "x_2 = x_1 − f_1(x_1−x_0)/(f_1−f_0)", "|x_2 − x_1| < tol ?", "x_0=x_1; x_1=x_2", "Output root x_2", "Stop"],
     },
     simulator: <SecantSim />,
     cFilename: "secant.c",

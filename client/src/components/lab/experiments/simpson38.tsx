@@ -74,7 +74,7 @@ FOR i ← 1 TO n−1 DO
 END FOR
 I ← (3h / 8) × sum
 OUTPUT I`,
-      flowchart: ["Start", "Read f, a, b, n (mult. of 3)", "h = (b−a)/n", "sum = f(a)+f(b)", "i%3=0: +2f(xᵢ) · else +3f(xᵢ)", "I = (3h/8)·sum", "Output I", "Stop"],
+      flowchart: ["Start", "Read f, a, b, n (mult. of 3)", "h = (b−a)/n", "sum = f(a)+f(b)", "i%3=0: +2f(x_i) · else +3f(x_i)", "I = (3h/8)·sum", "Output I", "Stop"],
     },
     simulator: <IntegrationSimShared rule="s38" />,
     cFilename: "simpson38.c",

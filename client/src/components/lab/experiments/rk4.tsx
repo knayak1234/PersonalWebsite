@@ -89,7 +89,7 @@ WHILE x < xend DO
     x ← x + h
     PRINT x, y
 END WHILE`,
-      flowchart: ["Start", "Read f, x0, y0, h, xend", "k1..k4 slope estimates", "y = y + h/6·(k1+2k2+2k3+k4)", "x = x + h", "x < xend ?", "Output (x, y)", "Stop"],
+      flowchart: ["Start", "Read f, x_0, y_0, h, x_{end}", "k_1..k_4 slope estimates", "y = y + h/6·(k_1+2k_2+2k_3+k_4)", "x = x + h", "x < x_{end} ?", "Output (x, y)", "Stop"],
     },
     simulator: <ODESimShared method="rk4" />,
     cFilename: "rk4.c",
@@ -151,7 +151,7 @@ int main(void) {
       { level: "Medium", text: "Solve projectile motion with linear drag (two coupled ODEs) and find the range.", hint: "vₓ′ = −kvₓ, v_y′ = −g − kv_y." },
       { level: "Advanced", text: "Show that for f independent of y, RK4 reduces to Simpson's 1/3 rule.", hint: "Set f = f(x) and simplify the k's." },
       { level: "Advanced", text: "Integrate the two-body Kepler problem with RK4 and observe slow energy drift over many orbits.", hint: "Compare with a symplectic leapfrog integrator." },
-      { level: "Advanced", text: "Implement adaptive step control by comparing one full step with two half-steps (step-doubling).", hint: "Estimate local error ∝ (y_full − y_half)/15." },
+      { level: "Advanced", text: "Implement adaptive step control by comparing one full step with two half-steps (step-doubling).", hint: "Estimate local error ∝ (y_{full} − y_{half})/15." },
     ],
     references: (
       <ul>
