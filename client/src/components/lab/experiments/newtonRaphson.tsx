@@ -7,7 +7,7 @@ import { newtonRaphson, centralDiff, sampleCurve } from "@/lib/lab/numerics";
 import { NumberField, TextField } from "@/components/lab/ParamControl";
 import SimLayout, { StatTile, OutputBlock } from "@/components/lab/SimLayout";
 import ResultsTable from "@/components/lab/ResultsTable";
-import { LineFigure } from "@/components/lab/Charts";
+import { LineFigure, SceneFrame } from "@/components/lab/Charts";
 import MathTeX from "@/components/lab/MathTeX";
 import { Callout, FactGrid } from "@/components/lab/Content";
 import type { ExperimentContent } from "@/components/lab/ExperimentScaffold";
@@ -81,19 +81,21 @@ function NewtonSim() {
             </div>
 
             <OutputBlock title="Visualization — curve, first tangent & root">
+              <SceneFrame glowCurves>
               <ResponsiveContainer width="100%" height={300}>
                 <ComposedChart data={result.curve} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(0 0% 80% / 0.3)" />
-                  <XAxis dataKey="x" tick={{ fontSize: 11 }} type="number" domain={["dataMin", "dataMax"]} />
-                  <YAxis tick={{ fontSize: 11 }} width={50} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Legend wrapperStyle={{ fontSize: 12 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.14)" />
+                  <XAxis dataKey="x" tick={{ fontSize: 11, fill: "#8fa3c8" }} type="number" domain={["dataMin", "dataMax"]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#8fa3c8" }} width={50} />
+                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "#141b31", border: "1px solid rgba(148,163,184,0.25)", color: "#e2e8f0" }} />
+                  <Legend wrapperStyle={{ fontSize: 12, color: "#cbd5e1" }} />
                   <ReferenceLine y={0} stroke="#94a3b8" />
-                  <Line type="monotone" dataKey="y" name="f(x)" stroke="#dc2626" strokeWidth={2} dot={false} isAnimationActive={false} />
-                  <Line type="linear" dataKey="t" name="tangent at x₀" stroke="#2563eb" strokeWidth={1.5} strokeDasharray="6 4" dot={false} connectNulls isAnimationActive={false} />
-                  <ReferenceDot x={+result.res.root.toFixed(4)} y={0} r={5} fill="#16a34a" stroke="white" />
+                  <Line type="monotone" dataKey="y" name="f(x)" stroke="#f87171" strokeWidth={2} dot={false} isAnimationActive animationDuration={900} animationEasing="ease-out" />
+                  <Line type="linear" dataKey="t" name="tangent at x₀" stroke="#60a5fa" strokeWidth={1.5} strokeDasharray="6 4" dot={false} connectNulls isAnimationActive animationDuration={900} animationEasing="ease-out" />
+                  <ReferenceDot x={+result.res.root.toFixed(4)} y={0} r={5} fill="#4ade80" stroke="white" />
                 </ComposedChart>
               </ResponsiveContainer>
+              </SceneFrame>
               <p className="text-xs text-muted-foreground mt-2">
                 Each step replaces the curve by its tangent (blue) and jumps to where the tangent crosses zero;
                 the green dot is the converged root.

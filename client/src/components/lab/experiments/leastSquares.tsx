@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import {
   ComposedChart, Scatter, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine,
 } from "recharts";
+import { SceneFrame } from "@/components/lab/Charts";
 import { leastSquaresLinear } from "@/lib/lab/numerics";
 import SimLayout, { StatTile, OutputBlock } from "@/components/lab/SimLayout";
 import ResultsTable from "@/components/lab/ResultsTable";
@@ -112,33 +113,37 @@ function LeastSquaresSim() {
             </Callout>
 
             <OutputBlock title="Visualization — data & best-fit line">
+              <SceneFrame glowCurves>
               <ResponsiveContainer width="100%" height={320}>
                 <ComposedChart data={result.plot} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(0 0% 80% / 0.3)" />
-                  <XAxis dataKey="x" type="number" tick={{ fontSize: 11 }} domain={["dataMin", "dataMax"]} />
-                  <YAxis tick={{ fontSize: 11 }} width={50} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Legend wrapperStyle={{ fontSize: 12 }} />
-                  <Scatter dataKey="y" name="data" fill="#f59e0b" isAnimationActive={false} />
-                  <Line dataKey="fit" name="best-fit line" stroke="#2563eb" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.14)" />
+                  <XAxis dataKey="x" type="number" tick={{ fontSize: 11, fill: "#8fa3c8" }} domain={["dataMin", "dataMax"]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#8fa3c8" }} width={50} />
+                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "#141b31", border: "1px solid rgba(148,163,184,0.25)", color: "#e2e8f0" }} />
+                  <Legend wrapperStyle={{ fontSize: 12, color: "#cbd5e1" }} />
+                  <Scatter dataKey="y" name="data" fill="#fbbf24" isAnimationActive={false} />
+                  <Line dataKey="fit" name="best-fit line" stroke="#60a5fa" strokeWidth={2} dot={false} isAnimationActive animationDuration={900} animationEasing="ease-out" />
                 </ComposedChart>
               </ResponsiveContainer>
+              </SceneFrame>
               <p className="text-xs text-muted-foreground mt-2">
                 The blue line minimises the sum of squared vertical distances (residuals) to the orange data points.
               </p>
             </OutputBlock>
 
             <OutputBlock title="Numerical results — residuals">
+              <SceneFrame glowCurves>
               <ResponsiveContainer width="100%" height={220}>
                 <ComposedChart data={result.fit.residuals} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(0 0% 80% / 0.3)" />
-                  <XAxis dataKey="x" type="number" tick={{ fontSize: 11 }} domain={["dataMin", "dataMax"]} />
-                  <YAxis tick={{ fontSize: 11 }} width={50} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.14)" />
+                  <XAxis dataKey="x" type="number" tick={{ fontSize: 11, fill: "#8fa3c8" }} domain={["dataMin", "dataMax"]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#8fa3c8" }} width={50} />
+                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "#141b31", border: "1px solid rgba(148,163,184,0.25)", color: "#e2e8f0" }} />
                   <ReferenceLine y={0} stroke="#94a3b8" />
-                  <Scatter dataKey="residual" name="residual" fill="#e11d48" isAnimationActive={false} />
+                  <Scatter dataKey="residual" name="residual" fill="#fb7185" isAnimationActive={false} />
                 </ComposedChart>
               </ResponsiveContainer>
+              </SceneFrame>
               <p className="text-xs text-muted-foreground mt-1 mb-4">
                 Residuals should scatter randomly about zero — a pattern (curvature) signals the linear model is wrong.
               </p>

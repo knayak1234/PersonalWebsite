@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {
   ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from "recharts";
+import { SceneFrame } from "@/components/lab/Charts";
 import { compileExpression } from "@/lib/lab/expr";
 import { trapezoidal, referenceIntegral, relErrorPct, sampleCurve } from "@/lib/lab/numerics";
 import { NumberField, TextField } from "@/components/lab/ParamControl";
@@ -80,17 +81,19 @@ function TrapezoidalSim() {
             </div>
 
             <OutputBlock title="Visualization — curve & trapezoidal strips">
+              <SceneFrame glowCurves>
               <ResponsiveContainer width="100%" height={320}>
                 <ComposedChart data={chartData} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(0 0% 80% / 0.3)" />
-                  <XAxis dataKey="x" tick={{ fontSize: 11 }} type="number" domain={["dataMin", "dataMax"]} />
-                  <YAxis tick={{ fontSize: 11 }} width={50} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Legend wrapperStyle={{ fontSize: 12 }} />
-                  <Area type="linear" dataKey="trap" name="Trapezoidal strips" stroke="#6366f1" fill="#6366f1" fillOpacity={0.18} connectNulls isAnimationActive={false} dot={{ r: 2 }} />
-                  <Line type="monotone" dataKey="curve" name="f(x)" stroke="#2563eb" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.14)" />
+                  <XAxis dataKey="x" tick={{ fontSize: 11, fill: "#8fa3c8" }} type="number" domain={["dataMin", "dataMax"]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#8fa3c8" }} width={50} />
+                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "#141b31", border: "1px solid rgba(148,163,184,0.25)", color: "#e2e8f0" }} />
+                  <Legend wrapperStyle={{ fontSize: 12, color: "#cbd5e1" }} />
+                  <Area type="linear" dataKey="trap" name="Trapezoidal strips" stroke="#818cf8" fill="#818cf8" fillOpacity={0.18} connectNulls isAnimationActive animationDuration={900} animationEasing="ease-out" dot={{ r: 2 }} />
+                  <Line type="monotone" dataKey="curve" name="f(x)" stroke="#60a5fa" strokeWidth={2} dot={false} isAnimationActive animationDuration={900} animationEasing="ease-out" />
                 </ComposedChart>
               </ResponsiveContainer>
+              </SceneFrame>
               <p className="text-xs text-muted-foreground mt-2">
                 The shaded polygon is the trapezoidal approximation; the gap between it and the smooth
                 curve f(x) is the error. Increase n to shrink it.

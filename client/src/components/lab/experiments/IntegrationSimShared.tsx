@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {
   ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from "recharts";
+import { SceneFrame } from "@/components/lab/Charts";
 import { compileExpression } from "@/lib/lab/expr";
 import {
   simpson13, simpson38, trapezoidal, referenceIntegral, relErrorPct, sampleCurve,
@@ -106,17 +107,19 @@ export default function IntegrationSimShared({ rule }: { rule: Rule }) {
             </div>
 
             <OutputBlock title="Visualization — curve & parabolic approximation">
+              <SceneFrame glowCurves>
               <ResponsiveContainer width="100%" height={320}>
                 <ComposedChart data={chartData} margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(0 0% 80% / 0.3)" />
-                  <XAxis dataKey="x" tick={{ fontSize: 11 }} type="number" domain={["dataMin", "dataMax"]} />
-                  <YAxis tick={{ fontSize: 11 }} width={50} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Legend wrapperStyle={{ fontSize: 12 }} />
-                  <Area type="monotone" dataKey="approx" name={`${ruleName} fit`} stroke="#0891b2" fill="#0891b2" fillOpacity={0.16} connectNulls isAnimationActive={false} dot={false} />
-                  <Line type="monotone" dataKey="curve" name="f(x)" stroke="#2563eb" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.14)" />
+                  <XAxis dataKey="x" tick={{ fontSize: 11, fill: "#8fa3c8" }} type="number" domain={["dataMin", "dataMax"]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#8fa3c8" }} width={50} />
+                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, background: "#141b31", border: "1px solid rgba(148,163,184,0.25)", color: "#e2e8f0" }} />
+                  <Legend wrapperStyle={{ fontSize: 12, color: "#cbd5e1" }} />
+                  <Area type="monotone" dataKey="approx" name={`${ruleName} fit`} stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.16} connectNulls isAnimationActive animationDuration={900} animationEasing="ease-out" dot={false} />
+                  <Line type="monotone" dataKey="curve" name="f(x)" stroke="#60a5fa" strokeWidth={2} dot={false} isAnimationActive animationDuration={900} animationEasing="ease-out" />
                 </ComposedChart>
               </ResponsiveContainer>
+              </SceneFrame>
               <p className="text-xs text-muted-foreground mt-2">
                 {ruleName} fits {rule === "s13" ? "parabolas through each pair" : "cubics through each triple"} of
                 intervals — the approximation hugs the true curve far more tightly than straight trapezoidal lines,
