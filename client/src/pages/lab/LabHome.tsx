@@ -64,7 +64,7 @@ export default function LabHome() {
     if (meta) {
       meta.setAttribute(
         "content",
-        "Interactive virtual laboratory for MSc Physics students: numerical integration, root finding, differential equations, Monte Carlo, curve fitting, matrix methods and interpolation with simulators, derivations, C programs and viva questions."
+        "Interactive virtual laboratory for the PH-C-415 Computer Practical (I) syllabus: quadratic equations, sorting, series summation, interpolation (linear, quadratic, Stirling, cubic spline, Newton, Lagrange), transcendental equations, matrix operations, determinant, inverse, Gauss elimination, LU decomposition and least-squares fitting with live simulators, derivations, C programs and viva questions."
       );
     }
     window.scrollTo(0, 0);
@@ -86,8 +86,10 @@ export default function LabHome() {
             MSc Physics Computer Programming Laboratory
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mb-6">
-            Interactive Numerical Methods and Computational Physics Learning Portal — learn the
-            theory, experiment with live simulators, visualise algorithms, study the C
+            Interactive Numerical Methods and Computational Physics Learning Portal, mapped to the
+            <strong> PH-C-415 Computer Practical (I)</strong> syllabus — from quadratic equations,
+            sorting and series summation to interpolation, matrix methods and curve fitting. Learn
+            the theory, experiment with live simulators, visualise algorithms, study the C
             implementations, and prepare for your viva.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
@@ -103,8 +105,8 @@ export default function LabHome() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
             {[
               { icon: FlaskConical, n: `${completed}`, l: "Interactive Experiments" },
-              { icon: BookOpenCheck, n: "8", l: "Modules" },
-              { icon: Code2, n: "17+", l: "C Programs" },
+              { icon: BookOpenCheck, n: `${MODULES.length}`, l: "Modules" },
+              { icon: Code2, n: `${completed}`, l: "C Programs" },
               { icon: Atom, n: "10", l: "Sections / Experiment" },
             ].map((s, i) => (
               <Card key={i} className="text-center research-card glow">

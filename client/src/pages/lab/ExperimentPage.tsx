@@ -26,6 +26,18 @@ import buildDifferentiation from "@/components/lab/experiments/differentiation";
 import buildGaussSeidel from "@/components/lab/experiments/gaussSeidel";
 import buildNewtonForward from "@/components/lab/experiments/newtonForward";
 import buildLagrange from "@/components/lab/experiments/lagrange";
+// PH-C-415 syllabus experiments.
+import buildQuadratic from "@/components/lab/experiments/quadratic";
+import buildSorting from "@/components/lab/experiments/sorting";
+import buildSeriesSummation from "@/components/lab/experiments/seriesSummation";
+import buildLinearInterpolation from "@/components/lab/experiments/linearInterpolation";
+import buildQuadraticInterpolation from "@/components/lab/experiments/quadraticInterpolation";
+import buildStirling from "@/components/lab/experiments/stirling";
+import buildCubicSpline from "@/components/lab/experiments/cubicSpline";
+import buildMatrixOperations from "@/components/lab/experiments/matrixOperations";
+import buildDeterminant from "@/components/lab/experiments/determinant";
+import buildMatrixInverse from "@/components/lab/experiments/matrixInverse";
+import buildLuDecomposition from "@/components/lab/experiments/luDecomposition";
 
 type Builder = (meta: ExperimentMeta, prev?: ExperimentMeta, next?: ExperimentMeta) => ExperimentContent;
 
@@ -47,6 +59,17 @@ const BUILDERS: Record<string, Builder> = {
   "gauss-seidel": buildGaussSeidel,
   "newton-forward": buildNewtonForward,
   lagrange: buildLagrange,
+  quadratic: buildQuadratic,
+  sorting: buildSorting,
+  "series-summation": buildSeriesSummation,
+  "linear-interpolation": buildLinearInterpolation,
+  "quadratic-interpolation": buildQuadraticInterpolation,
+  stirling: buildStirling,
+  "cubic-spline": buildCubicSpline,
+  "matrix-operations": buildMatrixOperations,
+  determinant: buildDeterminant,
+  "matrix-inverse": buildMatrixInverse,
+  "lu-decomposition": buildLuDecomposition,
 };
 
 function ComingSoon({ meta }: { meta: ExperimentMeta }) {
