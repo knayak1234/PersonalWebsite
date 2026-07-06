@@ -86,10 +86,8 @@ export default function LabHome() {
             MSc Physics Computer Programming Laboratory
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mb-6">
-            Interactive Numerical Methods and Computational Physics Learning Portal, mapped to the
-            <strong> PH-C-415 Computer Practical (I)</strong> syllabus — from quadratic equations,
-            sorting and series summation to interpolation, matrix methods and curve fitting. Learn
-            the theory, experiment with live simulators, visualise algorithms, study the C
+            Interactive Numerical Methods and Computational Physics Learning Portal. Learn the
+            theory, experiment with live simulators, visualise algorithms, study the C
             implementations, and prepare for your viva.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
