@@ -85,7 +85,7 @@ export default function LabHome() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-950/20 dark:via-background dark:to-indigo-950/20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 sm:pt-16 sm:pb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <Sparkles className="w-3.5 h-3.5" /> Interactive Virtual Laboratory
           </div>
@@ -126,8 +126,9 @@ export default function LabHome() {
         </div>
       </section>
 
-      {/* Course contents — quick index of every experiment */}
-      <section id="contents" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      {/* Course contents — quick index of every experiment.
+          Modules are grouped into four explicit columns of near-equal height. */}
+      <section id="contents" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-10">
         <div className="flex items-center gap-2 mb-1">
           <ListTree className="w-5 h-5 text-primary" />
           <h2 className="text-2xl font-bold font-serif">Course Contents</h2>
@@ -135,13 +136,16 @@ export default function LabHome() {
         <p className="text-sm text-muted-foreground mb-6">
           Jump straight to any experiment in any module.
         </p>
-        <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:balance]">
-          {MODULES.map((m) => {
-            const exps = EXPERIMENTS.filter((e) => e.moduleNumber === m.number);
-            if (!exps.length) return null;
-            const MIcon = m.icon;
-            return (
-              <Card key={m.number} className="research-card break-inside-avoid mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
+          {[[1, 2, 3], [4, 7], [5, 6], [8]].map((col, ci) => (
+            <div key={ci} className="space-y-4">
+              {col.map((num) => {
+                const m = MODULES.find((x) => x.number === num)!;
+                const exps = EXPERIMENTS.filter((e) => e.moduleNumber === m.number);
+                if (!exps.length) return null;
+                const MIcon = m.icon;
+                return (
+                  <Card key={m.number} className="research-card">
                 <CardContent className="p-4">
                   <button
                     onClick={() => {
@@ -193,10 +197,12 @@ export default function LabHome() {
                       );
                     })}
                   </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </section>
 
