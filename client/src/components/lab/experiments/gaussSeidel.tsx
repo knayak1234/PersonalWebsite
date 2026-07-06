@@ -237,9 +237,9 @@ FOR k = 1 TO maxIter DO
     FOR i = 1 TO n DO
         s ← b[i]
         FOR j = 1 TO n, j ≠ i DO  s ← s − A[i][j]*x[j]
-        xnew ← s / A[i][i]
-        err ← max(err, |xnew − x[i]|)
-        x[i] ← xnew          // use immediately
+        x_{new} ← s / A[i][i]
+        err ← max(err, |x_{new} − x[i]|)
+        x[i] ← x_{new}          // use immediately
     IF err < tol THEN STOP
 OUTPUT x`,
       flowchart: ["Start", "Read A, b, tol", "Guess x = 0", "Update each x_i (latest values)", "max |Δx| < tol ?", "Output x", "Stop"],

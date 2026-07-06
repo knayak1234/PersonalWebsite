@@ -215,8 +215,8 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Detect the period by finding the first repeated state." },
         { label: "Test quality: uniformity (histogram / χ²) and correlation (lag plot)." },
       ],
-      pseudocode: `INPUT a, c, m, X0, count
-X ← X0
+      pseudocode: `INPUT a, c, m, X_0, count
+X ← X_0
 FOR n = 1 TO count DO
     X ← (a * X + c) mod m
     u ← X / m            // normalise to [0,1)

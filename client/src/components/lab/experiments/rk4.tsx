@@ -78,14 +78,14 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Compute k₄ = f(xₙ + h, yₙ + h·k₃)." },
         { label: "Update yₙ₊₁ = yₙ + (h/6)(k₁ + 2k₂ + 2k₃ + k₄), advance x, and repeat." },
       ],
-      pseudocode: `INPUT f, x0, y0, h, xend
-x ← x0;  y ← y0
-WHILE x < xend DO
-    k1 ← f(x, y)
-    k2 ← f(x + h/2, y + h/2 * k1)
-    k3 ← f(x + h/2, y + h/2 * k2)
-    k4 ← f(x + h,   y + h   * k3)
-    y ← y + (h/6) * (k1 + 2*k2 + 2*k3 + k4)
+      pseudocode: `INPUT f, x_0, y_0, h, x_{end}
+x ← x_0;  y ← y_0
+WHILE x < x_{end} DO
+    k_1 ← f(x, y)
+    k_2 ← f(x + h/2, y + h/2 * k_1)
+    k_3 ← f(x + h/2, y + h/2 * k_2)
+    k_4 ← f(x + h,   y + h   * k_3)
+    y ← y + (h/6) * (k_1 + 2*k_2 + 2*k_3 + k_4)
     x ← x + h
     PRINT x, y
 END WHILE`,

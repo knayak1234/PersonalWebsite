@@ -204,13 +204,13 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Otherwise set xₖ ← xₖ₊₁ and repeat." },
         { label: "Guard against f′(xₖ) ≈ 0 and a maximum iteration count." },
       ],
-      pseudocode: `INPUT f, f', x0, tol, maxIter
-x ← x0
+      pseudocode: `INPUT f, f', x_0, tol, maxIter
+x ← x_0
 FOR k = 1 TO maxIter DO
     IF |f'(x)| < eps THEN STOP "derivative ~ 0"
-    xnew ← x − f(x) / f'(x)
-    IF |xnew − x| < tol THEN RETURN xnew
-    x ← xnew
+    x_{new} ← x − f(x) / f'(x)
+    IF |x_{new} − x| < tol THEN RETURN x_{new}
+    x ← x_{new}
 END FOR
 OUTPUT x`,
       flowchart: ["Start", "Read f, f', x_0, tol", "x_{new} = x − f(x)/f'(x)", "|x_{new} − x| < tol ?", "x = x_{new}", "Output root x_{new}", "Stop"],

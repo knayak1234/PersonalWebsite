@@ -183,13 +183,13 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
 IF a = 0 THEN print "not quadratic"; STOP
 D ← b*b - 4*a*c
 IF D > 0 THEN
-    x1 ← (-b + sqrt(D)) / (2a)
-    x2 ← (-b - sqrt(D)) / (2a)
+    x_1 ← (-b + sqrt(D)) / (2a)
+    x_2 ← (-b - sqrt(D)) / (2a)
 ELSE IF D = 0 THEN
-    x1 ← x2 ← -b / (2a)
+    x_1 ← x_2 ← -b / (2a)
 ELSE
     re ← -b / (2a);  im ← sqrt(-D) / (2a)
-    x1 ← re + i*im;  x2 ← re - i*im
+    x_1 ← re + i*im;  x_2 ← re - i*im
 OUTPUT roots and nature`,
       flowchart: ["Start", "Read a, b, c", "a = 0 ?", "D = b^2−4ac", "Sign of D ?", "Compute roots", "Output roots & nature", "Stop"],
     },

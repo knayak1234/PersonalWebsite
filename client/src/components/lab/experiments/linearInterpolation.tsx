@@ -163,9 +163,9 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Optionally warn if x lies outside [x₀, x₁] (extrapolation)." },
         { label: "Output the interpolated value." },
       ],
-      pseudocode: `INPUT x0, y0, x1, y1, x
-m ← (y1 - y0) / (x1 - x0)
-y ← y0 + m * (x - x0)
+      pseudocode: `INPUT x_0, y_0, x_1, y_1, x
+m ← (y_1 - y_0) / (x_1 - x_0)
+y ← y_0 + m * (x - x_0)
 OUTPUT y`,
       flowchart: ["Start", "Read points and x", "m = (y_1−y_0)/(x_1−x_0)", "y = y_0 + m(x−x_0)", "Output y", "Stop"],
     },

@@ -183,11 +183,11 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Sum the three products to get P₂(x)." },
         { label: "Output the interpolated value." },
       ],
-      pseudocode: `INPUT x0,y0, x1,y1, x2,y2, x
-L0 ← (x-x1)(x-x2)/((x0-x1)(x0-x2))
-L1 ← (x-x0)(x-x2)/((x1-x0)(x1-x2))
-L2 ← (x-x0)(x-x1)/((x2-x0)(x2-x1))
-P  ← L0*y0 + L1*y1 + L2*y2
+      pseudocode: `INPUT x_0,y_0, x_1,y_1, x_2,y_2, x
+L0 ← (x-x_1)(x-x_2)/((x_0-x_1)(x_0-x_2))
+L1 ← (x-x_0)(x-x_2)/((x_1-x_0)(x_1-x_2))
+L2 ← (x-x_0)(x-x_1)/((x_2-x_0)(x_2-x_1))
+P  ← L0*y_0 + L1*y_1 + L2*y_2
 OUTPUT P`,
       flowchart: ["Start", "Read 3 points, x", "Build L_0, L_1, L_2", "P = ΣL_i y_i", "Output P", "Stop"],
     },

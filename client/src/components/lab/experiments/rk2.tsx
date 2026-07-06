@@ -83,13 +83,13 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Advance xₙ₊₁ = xₙ + h." },
         { label: "Repeat until x reaches the end point; optionally compare with the exact solution." },
       ],
-      pseudocode: `INPUT f, x0, y0, h, xend
-x ← x0;  y ← y0
+      pseudocode: `INPUT f, x_0, y_0, h, x_{end}
+x ← x_0;  y ← y_0
 PRINT x, y
-WHILE x < xend DO
-    k1 ← f(x, y)
-    k2 ← f(x + h, y + h*k1)
-    y  ← y + (h/2)*(k1 + k2)   // RK2 (Heun) update
+WHILE x < x_{end} DO
+    k_1 ← f(x, y)
+    k_2 ← f(x + h, y + h*k_1)
+    y  ← y + (h/2)*(k_1 + k_2)   // RK2 (Heun) update
     x  ← x + h
     PRINT x, y
 END WHILE`,

@@ -208,15 +208,15 @@ export default function build(meta: ExperimentMeta, prev?: any, next?: any): Exp
         { label: "Otherwise shift xₖ₋₁ ← xₖ, xₖ ← xₖ₊₁ and repeat." },
         { label: "Guard against equal function values and a maximum iteration count." },
       ],
-      pseudocode: `INPUT f, x0, x1, tol, maxIter
+      pseudocode: `INPUT f, x_0, x_1, tol, maxIter
 FOR k = 1 TO maxIter DO
-    f0 ← f(x0);  f1 ← f(x1)
-    IF |f1 − f0| < eps THEN STOP "flat secant"
-    x2 ← x1 − f1 * (x1 − x0) / (f1 − f0)
-    IF |x2 − x1| < tol THEN RETURN x2
-    x0 ← x1;  x1 ← x2
+    f_0 ← f(x_0);  f_1 ← f(x_1)
+    IF |f_1 − f_0| < eps THEN STOP "flat secant"
+    x_2 ← x_1 − f_1 * (x_1 − x_0) / (f_1 − f_0)
+    IF |x_2 − x_1| < tol THEN RETURN x_2
+    x_0 ← x_1;  x_1 ← x_2
 END FOR
-OUTPUT x1`,
+OUTPUT x_1`,
       flowchart: ["Start", "Read f, x_0, x_1, tol", "x_2 = x_1 − f_1(x_1−x_0)/(f_1−f_0)", "|x_2 − x_1| < tol ?", "x_0=x_1; x_1=x_2", "Output root x_2", "Stop"],
     },
     simulator: <SecantSim />,

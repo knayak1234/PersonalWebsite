@@ -63,11 +63,11 @@ export function AlgorithmSteps({ steps }: { steps: AlgoStep[] }) {
   );
 }
 
-/** Monospaced pseudocode block. */
+/** Monospaced pseudocode block. Renders _/^ notation as real sub/superscripts. */
 export function Pseudocode({ code }: { code: string }) {
   return (
     <pre className="rounded-lg border border-border bg-muted/50 p-4 text-xs font-mono leading-relaxed overflow-x-auto whitespace-pre">
-      {code}
+      <Sci>{code}</Sci>
     </pre>
   );
 }
