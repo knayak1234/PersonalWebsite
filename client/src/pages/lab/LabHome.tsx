@@ -8,12 +8,19 @@ import { MODULES, EXPERIMENTS } from "@/lib/lab/registry";
 import type { ExperimentMeta } from "@/lib/lab/types";
 import {
   FlaskConical, ArrowRight, Sparkles, BookOpenCheck, Code2, GitCompareArrows, Atom,
+  ListTree, ChevronRight,
 } from "lucide-react";
 
 const diffStyle: Record<string, string> = {
   Beginner: "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300",
   Intermediate: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
   Advanced: "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300",
+};
+
+const diffDot: Record<string, string> = {
+  Beginner: "bg-green-500",
+  Intermediate: "bg-amber-500",
+  Advanced: "bg-rose-500",
 };
 
 function ExperimentCard({ exp }: { exp: ExperimentMeta }) {
@@ -119,8 +126,82 @@ export default function LabHome() {
         </div>
       </section>
 
+      {/* Course contents — quick index of every experiment */}
+      <section id="contents" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex items-center gap-2 mb-1">
+          <ListTree className="w-5 h-5 text-primary" />
+          <h2 className="text-2xl font-bold font-serif">Course Contents</h2>
+        </div>
+        <p className="text-sm text-muted-foreground mb-6">
+          Jump straight to any experiment in any module.
+        </p>
+        <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:balance]">
+          {MODULES.map((m) => {
+            const exps = EXPERIMENTS.filter((e) => e.moduleNumber === m.number);
+            if (!exps.length) return null;
+            const MIcon = m.icon;
+            return (
+              <Card key={m.number} className="research-card break-inside-avoid mb-4">
+                <CardContent className="p-4">
+                  <button
+                    onClick={() => {
+                      setFilter(m.number);
+                      document.getElementById("experiments")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-2.5 mb-3 w-full text-left group"
+                  >
+                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${m.accent} text-white flex items-center justify-center shadow shrink-0`}>
+                      <MIcon className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                        Module {m.number}
+                      </div>
+                      <div className="text-sm font-semibold group-hover:text-primary transition-colors">
+                        {m.title}
+                      </div>
+                    </div>
+                  </button>
+                  <ul className="space-y-0.5">
+                    {exps.map((e) => {
+                      const n = EXPERIMENTS.indexOf(e) + 1;
+                      const row = (
+                        <span className="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] leading-snug hover:bg-primary/5 hover:text-primary transition-colors">
+                          <span className="w-5 shrink-0 text-right text-[10px] font-mono text-muted-foreground">
+                            {n}
+                          </span>
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full shrink-0 ${diffDot[e.difficulty]}`}
+                            title={e.difficulty}
+                          />
+                          <span className="flex-1">{e.name}</span>
+                          {e.status === "soon" ? (
+                            <Badge variant="outline" className="text-[9px] shrink-0">Soon</Badge>
+                          ) : (
+                            <ChevronRight className="w-3 h-3 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </span>
+                      );
+                      return (
+                        <li key={e.id}>
+                          {e.status === "soon" ? (
+                            <span className="block opacity-60 cursor-default">{row}</span>
+                          ) : (
+                            <Link href={`/teaching/computer-programming/${e.id}`}>{row}</Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Module filter */}
-      <section id="experiments" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section id="experiments" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-border/60">
         <h2 className="text-2xl font-bold font-serif mb-1">Experiments by Module</h2>
         <p className="text-sm text-muted-foreground mb-6">Filter by module or browse the full catalogue.</p>
         <div className="flex flex-wrap gap-2 mb-8">
