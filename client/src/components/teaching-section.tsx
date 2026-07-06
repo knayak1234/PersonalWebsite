@@ -257,7 +257,7 @@ export default function TeachingSection() {
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 float">
                       <BookOpen className="w-5 h-5" />
                     </div>
-                    <div className="text-2xl font-bold stat-number mb-1">8+</div>
+                    <div className="text-2xl font-bold stat-number mb-1">9+</div>
                     <div className="text-xs text-muted-foreground">Courses Taught</div>
                   </CardContent>
                 </Card>
