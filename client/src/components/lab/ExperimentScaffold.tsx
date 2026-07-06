@@ -164,23 +164,25 @@ export default function ExperimentScaffold({ content }: { content: ExperimentCon
         {/* 3. Algorithm */}
         <section id="algorithm" className="scroll-mt-32">
           <SectionHeader icon={ListOrdered} title="Algorithm" n={3} />
-          <div className="grid lg:grid-cols-2 gap-6">
-            <Card>
-              <CardContent className="p-5">
-                <h3 className="text-sm font-semibold mb-4 text-muted-foreground uppercase tracking-wide">Step-by-step procedure</h3>
-                <AlgorithmSteps steps={content.algorithm.steps} />
-              </CardContent>
-            </Card>
+          <div className="grid lg:grid-cols-2 gap-6 items-start">
             <div className="space-y-6">
+              <Card>
+                <CardContent className="p-5">
+                  <h3 className="text-sm font-semibold mb-4 text-muted-foreground uppercase tracking-wide">Step-by-step procedure</h3>
+                  <AlgorithmSteps steps={content.algorithm.steps} />
+                </CardContent>
+              </Card>
               <div>
                 <h3 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Pseudocode</h3>
                 <Pseudocode code={content.algorithm.pseudocode} />
               </div>
-              <div>
+            </div>
+            <Card>
+              <CardContent className="p-5">
                 <h3 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Flowchart</h3>
                 <Flowchart steps={content.algorithm.flowchart} />
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
